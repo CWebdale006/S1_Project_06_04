@@ -18,10 +18,12 @@
     <title>Browyer Realty</title>
     <link rel="stylesheet" href="br_reset.css" />
     <link rel="stylesheet" href="br_styles.css" />
+    <link rel="icon" href="https://cdn.pixabay.com/photo/2013/07/12/14/14/house-148033_1280.png" type="image/gif" sizes="16x16" />
 </head>
 
 <body>
     <header>
+        <!--Links to different parts of Browyer Realty -->
         <img src="br_logo.png" alt="Browyer Realty Logo" />
         <nav id="one">
             <ul>
@@ -35,11 +37,10 @@
     </header>
 
     <!--Two row grid for the Listing Description-->
-    <!--put these in brackgorunds with rounded borders -->
     <section id="desc">
         <!--First row, with title-->
         <div class="row">
-            <div class="column-1-1">
+            <div class="col-1-1">
                 <h1>Listing Description</h1>
             </div>
         </div>
@@ -48,61 +49,72 @@
         <!--Second row-->
         <div class="row">
             <!--First column, with address-->
-            <div class="col-1-2">
-                <ul>
+            <div class="col-1-3">
+                <ul id="paper">
                     <li>
                         <h2>Address:</h2>
                     </li>
-                    <ul>
-                        <li>Listing 2048</li>
-                        <li>414 Mandel Road</li>
-                        <li>Owatonna, MN 55060</li>
-                    </ul>
+                    <li>
+                        Listing 2048
+                    </li>
+                    <li>
+                        414 Mandel Road
+                    </li>
+                    <li>
+                        Owatonna, MN 55060
+                    </li>
                 </ul>
             </div>
             <!--End of first column-->
 
-            <!--Second column, with price, square feet, bedrooms, baths-->
-            <div class="col-1-2">
-                <!--nested grid/row 1-->
-                <div class="row">
-                    <!--nested grid/col 1-->
-                    <div class="col-1-2">
-                        <h3>List Price: </h3>$412,800
-                    </div>
-                    <!--end of col 1-->
-
-                    <!--nested grid/col 2 -->
-                    <div class="col-1-2">
-                        <h3>Square Feet: </h3>3,300
-                    </div>
-                    <!--end of col 2-->
-                </div>
-                <!--end of row 1-->
-
-                <!--Nested grid/row 2-->
-                <div class="row">
-                    <!--nested grid/col 1-->
-                    <div class="col-1-2">
-                        <h3>Bedrooms: </h3>4
-                    </div>
-                    <!--end of col 1-->
-
-                    <!--nested grid/col 2 -->
-                    <div class="col-1-2">
-                        <h3>Baths: </h3>2-1/2
-                    </div>
-                    <!--end of col 2-->
-                </div>
-                <!--end of row 2-->
+            <!--Second column, with price, bedrooms-->
+            <div class="col-1-3">
+                <ul id="paper">
+                    <li>
+                        <h2>List Price: </h2>
+                    </li>
+                    <li>
+                        $412,800
+                    </li>
+                    <li>
+                        <h2>Bedrooms: </h2>
+                    </li>
+                    <li>
+                        4
+                    </li>
+                </ul>
             </div>
-            <!--End of second column-->
+
+            <!--Third column, with square feet and baths-->
+            <div class="col-1-3">
+                <ul id="paper">
+                    <li>
+                        <h2>Square Feet: </h2>
+                    </li>
+
+                    <li>
+                        3,300
+                    </li>
+
+                    <li>
+                        <h2>Baths: </h2>
+                    </li>
+
+                    <li>
+                        2-1/2
+                    </li>
+                </ul>
+            </div>
+            <!--End of third column-->
+
         </div>
         <!--End of second row -->
     </section>
 
+
+    <!--Listing description -->
     <article>
-        <h1>Listing 20481</h1>
+        <h1>Listing 2048</h1>
         <p>
             Paradise found! This custom-built brand new home sits proudly on a 6.8-acre
             high wooded site overlooking a 300-acre nature conservancy. The setting is
@@ -121,6 +133,8 @@
         </p>
     </article>
 
+
+    <!--Grid for 9 images-->
     <section id="views">
         <h1>Views</h1>
         <!--Beginning of first row-->
@@ -217,7 +231,7 @@
         <!--End of third row-->
     </section>
 
-    <!--idk if this will look good -->
+    <!--Footer with extra information about the listing -->
     <footer>
         <nav id="two">
             <ul>

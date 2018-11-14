@@ -1,5 +1,7 @@
 @charset "utf-8";
 
+@import url('https://fonts.googleapis.com/css?family=KoHo|Noto+Sans');
+
 /*
    New Perspectives on HTML5 and CSS3, 7th Edition
    Tutorial 4
@@ -14,6 +16,7 @@
 */
 
 /*HTML Styles*/
+/*Added a background with a radial gradient, with progressive enhancement. */
 html {
     background: #badcff;
     background: -moz-radial-gradient(center, ellipse cover, #badcff 51%, #69aff4 76%, #84b8ed 93%);
@@ -23,27 +26,31 @@ html {
 }
 
 /*Image Styles */
+/*Changed how images looked in a grid*/
 img {
     width: 100%;
     padding: 5px;
 }
 
 /*NAV Styles*/
+/*Gives the first horizontal nav a linear gradient from left to right. */
 nav#one {
     background-color: #188e7b;
     background-image: linear-gradient(90deg, #188e7b 0%, #e2628a 100%);
-
-
+    border-radius: 3px;
 }
 
+/*Gives the second horizontal nav a grey background. */
 nav#two {
     background-color: rgb(117, 117, 117);
 }
 
+/*Text of links is white*/
 a {
     color: white;
 }
 
+/*Puts the first horizontal nav into horzontal line. */
 nav#one ul li a:visited,
 nav#one ul li a:link {
     display: block;
@@ -52,6 +59,7 @@ nav#one ul li a:link {
     text-align: center;
 }
 
+/*Puts the second horizontal nav into a horizontal line, with a different width to span the entire body. */
 nav#two ul li a:visited,
 nav#two ul li a:link {
     display: block;
@@ -60,39 +68,47 @@ nav#two ul li a:link {
     text-align: center;
 }
 
-
+/*Changes the first horizontal nav, when hovered or active, to appear bigger and darker. */
 nav#one ul li a:hover,
 nav#one ul li a:active {
     filter: brightness(70%);
+    transform: scale(1.1, 1.1);
 }
 
+/*Changes the second horizontal nav, when hovered or active, to have a darker background. */
 nav#two ul li a:hover,
 nav#two ul li a:active {
     background-color: rgb(85, 85, 85);
 }
 
+/*Fixes container collapse. */
 nav::after {
     display: table;
     content: "";
     clear: both;
 }
 
+/*Spacing and visual issues. */
 nav a {
     padding: 5px;
 }
 
+li {
+    text-align: center;
+}
 
 /*Body Styles*/
+/*Sets width to 95% that of the browser window, with a max width of 960 pixels and centered on the page. Also adds a background color and a box shadow on the right and left edges. */
 body {
     width: 95%;
     max-width: 960px;
-    /* min-width: 640px; */
     margin-left: auto;
     margin-right: auto;
     background-color: rgb(220, 220, 220);
     box-shadow: #badcff 15px 0px 30px, #badcff -15px 0px 30px;
 }
 
+/*Adds margin and changes font. */
 h1,
 h2,
 h3,
@@ -100,17 +116,24 @@ h4,
 h5,
 h6 {
     margin: 5px;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 1.2em;
+    text-decoration: bold;
 }
 
+/*Left-indents every paragraph element. */
 p {
     text-indent: 10px;
 }
 
+/*Adds a background image behind the image of the Logo*/
 header {
     background-color: #52ACFF;
     background-image: url(https://images.unsplash.com/photo-1508184360431-51989b9a586f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e8370d8cad29550e4b11deaa9a695d1b&auto=format&fit=crop&w=1650&q=80);
+    border-bottom-left-radius: 3px;
 }
 
+/*Adjusts the margin*/
 h1,
 h2,
 li,
@@ -118,10 +141,25 @@ p {
     margin-left: 5px;
 }
 
+/*Changes the background of a specific unordered list and fixes the padding. */
+ul#paper {
+    background-image: url(br_paper.png);
+    border-radius: 25px;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 8px 0px;
+}
 
 /*Article Styles*/
+/*Adjusts the way the paragraphs in the article element appear. */
+article p {
+    line-height: 130%;
+    font-family: 'KoHo', sans-serif;
+    font-size: 1.1em;
+}
 
 /*Figure Box Styles*/
+/*Adds a curved border to images in the figure element. */
 figure img {
     border: 5px rgb(90, 90, 90);
     border-radius: 25px;
@@ -129,30 +167,33 @@ figure img {
     padding-bottom: 0px;
 }
 
+/*Adjusts the text of the figcaption, and adds a text shadow. */
 figcaption {
     text-align: center;
     padding-top: 0px;
     padding-bottom: 15px;
-    text-shadow: #7488f8 7px 0px 20px, #7488f8 -7px 0px 20px, #7488f8 0px 7px 20px;
+    text-shadow: #7488f8 5px 0px 18px, #7488f8 -5px 0px 18px, #7488f8 0px 5px 18px;
 }
 
-/*Footer Styles*/
-
 /*Grid Styles*/
+/*Clears the float of divs with the class "row"*/
 div.row {
     clear: both;
 }
 
+/*Container collapse*/
 div.row::after {
     clear: both;
     display: table;
     content: "";
 }
 
+/*Floats every div beginning with "col-" to the left.*/
 div[class^="col-"] {
     float: left;
 }
 
+/*Changes the width of columns */
 .col-1-1 {
     width: 100%;
 }
@@ -165,7 +206,8 @@ div[class^="col-"] {
     width: 33%;
 }
 
-
+/*Media Query*/
+/*Changes grids and some spacing when screen width is below 600 pixels*/
 @media only screen and (max-width: 600px) {
 
     nav#one ul li a:link,
@@ -182,5 +224,18 @@ div[class^="col-"] {
     li,
     div.col-1-2 {
         text-align: center;
+    }
+
+    body {
+        width: 100%;
+    }
+
+    h2 {
+        padding-top: 8px;
+    }
+
+    ul {
+        padding: 2px 0px;
+        margin: 6px 0px;
     }
 }
